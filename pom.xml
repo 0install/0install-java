@@ -34,6 +34,9 @@
                         <goals>
                             <goal>xmlbeans</goal>
                         </goals>
+                        <configuration>
+                            <download>true</download>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
