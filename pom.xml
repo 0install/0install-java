@@ -1,12 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+	<groupId>org.sonatype.oss</groupId>
+	<artifactId>oss-parent</artifactId>
+	<version>7</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
     <groupId>net.zeroinstall</groupId>
     <artifactId>model</artifactId>
     <version>1.14.2-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <name>Zero Install Model</name>
     <description>
 	The Zero Install XSD model transformed by Apache XMLBeans to Java source code.
@@ -21,7 +26,7 @@
     <scm>
 	<url>https://code.google.com/p/zero-install-model/</url>
 	<connection>scm:hg:https://code.google.com/p/zero-install-model/</connection>
-	<tag>HEAD</tag>
+	<developerConnection>scm:hg:https://code.google.com/p/zero-install-model/</developerConnection>
     </scm>
     <developers>
 	<developer>
