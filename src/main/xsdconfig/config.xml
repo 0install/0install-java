@@ -1,0 +1,5 @@
+<config xmlns="http://xml.apache.org/xmlbeans/2004/02/xbean/config">
+    <namespace uri="http://zero-install.sourceforge.net/2004/injector/interface">
+        <package>net.zeroinstall.model</package>
+    </namespace>
+</config>
