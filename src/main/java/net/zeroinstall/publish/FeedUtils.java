@@ -22,7 +22,7 @@ public final class FeedUtils {
      * @param gnuPGKey The name of the GnuPG key to use for
      * signing. <code>null</code> for no signature.
      * @return The generated XML string.
-     * @throws IOException A problem occured while calling the GnuPG executable.
+     * @throws IOException A problem occurred while calling the GnuPG executable.
      */
     public static String getFeedString(InterfaceDocument feed, String gnuPGKey) throws IOException {
         addStylesheet(feed);
