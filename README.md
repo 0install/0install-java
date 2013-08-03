@@ -2,7 +2,7 @@ The Zero Install [XSD model](https://0install.de/schema/injector/interface/inter
 
 Useful if you want to parse or generate Zero Install feeds in your Java applications. Not required if you simply want to call Zero Install from your application.
 
-Include this in your Maven {{{pom.xml}}} to use the library:
+Include this in your Maven ```pom.xml``` to use the library:
 ```xml
 <dependency>
     <groupId>net.zeroinstall</groupId>
