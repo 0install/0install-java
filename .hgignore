@@ -1,4 +1,2 @@
 syntax: glob
 target/
-release.properties
-pom.xml.releaseBackup
