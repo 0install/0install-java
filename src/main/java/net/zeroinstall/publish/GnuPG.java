@@ -2,9 +2,8 @@ package net.zeroinstall.publish;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.io.ByteStreams.toByteArray;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
+import java.io.*;
+import static net.zeroinstall.publish.FeedUtils.readAll;
 
 /**
  * Utility class for interacting with GnuPG.
@@ -20,7 +19,7 @@ public final class GnuPG {
                 start();
         waitForExit(process);
 
-        return new Scanner(process.getInputStream()).useDelimiter("\\A").next();
+        return readAll(process.getInputStream());
     }
 
     public static byte[] detachSign(String data, String keySpecifier) throws IOException {
@@ -39,7 +38,7 @@ public final class GnuPG {
     private static void waitForExit(Process process) throws IOException {
         try {
             if (process.waitFor() != 0) {
-                String errorMessage = new Scanner(process.getErrorStream()).useDelimiter("\\A").next();
+                String errorMessage = readAll(process.getErrorStream());
                 throw new IOException(errorMessage);
             }
         } catch (InterruptedException ex) {

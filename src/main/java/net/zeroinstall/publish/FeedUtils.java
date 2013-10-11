@@ -1,10 +1,10 @@
 package net.zeroinstall.publish;
 
 import static com.google.common.io.BaseEncoding.base64;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
 import net.zeroinstall.model.InterfaceDocument;
-import org.apache.xmlbeans.XmlCursor;
-import org.apache.xmlbeans.XmlOptions;
+import org.apache.xmlbeans.*;
 
 /**
  * Utility class for performing operations on feed files.
@@ -18,9 +18,9 @@ public final class FeedUtils {
      * Serializes a feed to an XML string with a stylesheet declaration and an
      * optional GnuPG signature.
      *
-     * @param feed Thee feed to be serialized.
+     * @param feed     Thee feed to be serialized.
      * @param gnuPGKey The name of the GnuPG key to use for
-     * signing. <code>null</code> for no signature.
+     *                 signing. <code>null</code> for no signature.
      * @return The generated XML string.
      * @throws IOException A problem occurred while calling the GnuPG executable.
      */
@@ -28,6 +28,17 @@ public final class FeedUtils {
         addStylesheet(feed);
         String xmlText = toXmlText(feed);
         return (gnuPGKey == null) ? xmlText : appendSignature(xmlText, gnuPGKey);
+    }
+
+    /**
+     * Reads the entire content of a stream to a string.
+     *
+     * @param stream The stream to read.
+     * @return The string read from the stream or <code>null</code> if the stream was empty.
+     */
+    public static String readAll(InputStream stream) {
+        Scanner scanner = new Scanner(stream).useDelimiter("\\A");
+        return scanner.hasNext() ? scanner.next() : null;
     }
 
     static void addStylesheet(InterfaceDocument feed) {
