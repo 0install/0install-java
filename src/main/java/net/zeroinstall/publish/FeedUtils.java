@@ -44,7 +44,7 @@ public final class FeedUtils {
     static void addStylesheet(InterfaceDocument feed) {
         XmlCursor cursor = feed.newCursor();
         cursor.toNextToken();
-        cursor.insertProcInst("xml-stylesheet", "type='text/xsl' href='interface.xsl'");
+        cursor.insertProcInst("xml-stylesheet", "type='text/xsl' href='feed.xsl'");
     }
 
     static String toXmlText(InterfaceDocument feed) {

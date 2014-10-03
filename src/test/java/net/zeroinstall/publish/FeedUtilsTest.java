@@ -32,6 +32,6 @@ public class FeedUtilsTest {
         feed.addNewInterface();
         addStylesheet(feed);
 
-        assertThat(toXmlText(feed), containsString("<?xml-stylesheet type='text/xsl' href='interface.xsl'?>"));
+        assertThat(toXmlText(feed), containsString("<?xml-stylesheet type='text/xsl' href='feed.xsl'?>"));
     }
 }
