@@ -6,33 +6,32 @@ import java.io.*;
 import static net.zeroinstall.publish.FeedUtils.readAll;
 
 /**
- * Utility class for interacting with GnuPG.
+ * Provides access to the signature functions of GnuPG.
  */
-public final class GnuPG {
+public class GnuPG implements OpenPgp {
 
-    private GnuPG() {
+    @Override
+    public byte[] sign(byte[] data, String keySpecifier) throws IOException {
+        Process process = new ProcessBuilder(
+                "gpg", "--detach-sign", "--default-key", checkNotNull(keySpecifier), "--output", "-", "-").
+                start();
+
+        OutputStream outputStream = process.getOutputStream();
+        outputStream.write(data);
+        outputStream.close();
+        waitForExit(process);
+
+        return toByteArray(process.getInputStream());
     }
 
-    public static String getPublicKey(String keySpecifier) throws IOException {
+    @Override
+    public String exportKey(String keySpecifier) throws IOException {
         Process process = new ProcessBuilder(
                 "gpg", "-a", "--export", checkNotNull(keySpecifier)).
                 start();
         waitForExit(process);
 
         return readAll(process.getInputStream());
-    }
-
-    public static byte[] detachSign(String data, String keySpecifier) throws IOException {
-        Process process = new ProcessBuilder(
-                "gpg", "--detach-sign", "--default-key", checkNotNull(keySpecifier), "--output", "-", "-").
-                start();
-
-        PrintWriter writer = new PrintWriter(process.getOutputStream());
-        writer.write(data);
-        writer.close();
-        waitForExit(process);
-
-        return toByteArray(process.getInputStream());
     }
 
     private static void waitForExit(Process process) throws IOException {
