@@ -1,0 +1,4 @@
+language: java
+
+# Java 9+ not supported by XMLBeans
+jdk: oraclejdk8
