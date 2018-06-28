@@ -5,9 +5,7 @@ The Zero Install [XSD model](https://0install.de/schema/injector/interface/inter
 
 [![zeroinstall-model](https://img.shields.io/maven-central/v/net.zeroinstall/zeroinstall-model.svg)](https://mvnrepository.com/artifact/net.zeroinstall/zeroinstall-model)
 
-CI Builds:  
-[![Windows](https://img.shields.io/appveyor/ci/0install/java-model.svg?label=Windows)](https://ci.appveyor.com/project/0install/java-model)
-[![Linux](https://img.shields.io/travis/0install/java-model.svg?label=Linux)](https://travis-ci.org/0install/java-model)
+[![Build status](https://img.shields.io/appveyor/ci/0install/java-model.svg)](https://ci.appveyor.com/project/0install/java-model)
 
 **Important:** XMLBeans does not support Java 9 or newer as a build environment. However, the resulting artifact will work fine on current Java versions.
 
