@@ -8,7 +8,7 @@
 
     <name>Zero Install Java Model</name>
     <description>The Zero Install XSD model transformed by Apache XMLBeans to Java source code.</description>
-    <url>https://github.com/0install/java-model</url>
+    <url>https://github.com/0install/0install-java</url>
     <licenses>
         <license>
             <name>GNU Lesser General Public License, Version 3.0</name>
@@ -17,8 +17,8 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:https://github.com/0install/java-model.git</connection>
-        <url>https://github.com/0install/java-model</url>
+        <connection>scm:git:https://github.com/0install/0install-java.git</connection>
+        <url>https://github.com/0install/0install-java</url>
         <tag>HEAD</tag>
     </scm>
 
