@@ -5,6 +5,18 @@ image:
 # Java 9+ not supported by XMLBeans
 stack: jdk 8
 
+for:
+  - matrix:
+      only:
+        - image: Visual Studio 2017
+    cache:
+      - '%USERPROFILE%\.m2 -> **\pom.xml'
+  - matrix:
+      only:
+        - image: Ubuntu
+    cache:
+      - '$HOME/.m2 -> **/pom.xml'
+
 build_script:
   # Java 9+ not supported by XMLBeans
   - cmd: set JAVA_HOME=C:\Program Files\Java\jdk1.8.0\jre
