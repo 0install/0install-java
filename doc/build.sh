@@ -7,4 +7,4 @@ mkdir -p ../target/doc
 
 0install run http://repo.roscidus.com/devel/doxygen
 
-cp CNAME ../target/doc/
+cp .nojekyll CNAME ../target/doc/

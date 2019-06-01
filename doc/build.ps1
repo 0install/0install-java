@@ -1,7 +1,8 @@
 ﻿$ErrorActionPreference = "Stop"
-pushd $(Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)
+pushd $PSScriptRoot
 
-if (!(Get-Command 0install -ErrorAction SilentlyContinue)) { # Ensure 0install is in PATH
+# Ensure 0install is in PATH
+if (!(Get-Command 0install -ErrorAction SilentlyContinue)) {
     echo "Downloading 0install"
     mkdir -Force "$env:TEMP\zero-install" | Out-Null
     Invoke-WebRequest "https://0install.de/files/0install.exe" -OutFile "$env:TEMP\zero-install\0install.exe"
@@ -13,6 +14,6 @@ mkdir ..\target\docs | Out-Null
 
 0install run --batch http://repo.roscidus.com/devel/doxygen
 
-cp CNAME ..\target\docs\
+cp .nojekyll,CNAME ..\target\docs\
 
 popd
