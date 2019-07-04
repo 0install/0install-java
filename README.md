@@ -1,14 +1,11 @@
 # Zero Install Java Model
 
 [![API documentation](https://img.shields.io/badge/api-docs-orange.svg)](https://java.0install.de/)
-[![Build status](https://img.shields.io/appveyor/ci/0install/0install-java.svg)](https://ci.appveyor.com/project/0install/0install-java)  
-The Zero Install [XSD model](https://0install.de/schema/injector/interface/interface.xsd) transformed to Java source code by [Apache XMLBeans](https://xmlbeans.apache.org/).
+[![Build status](https://img.shields.io/travis/0install/0install-java.svg)](https://travis-ci.org/0install/0install-java)
 
 This is **NOT** a full implementation of Zero Install in Java!
 
 [![zeroinstall-model](https://img.shields.io/maven-central/v/net.zeroinstall/zeroinstall-model.svg)](https://mvnrepository.com/artifact/net.zeroinstall/zeroinstall-model)
-
-**Important:** XMLBeans does not support Java 9 or newer as a build environment. However, the resulting artifact will work fine on current Java versions.
 
 Useful if you want to parse or generate Zero Install feeds in your Java applications. Not required if you simply want to call Zero Install from your application.
 

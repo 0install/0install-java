@@ -1,7 +1,0 @@
-<config xmlns="http://xml.apache.org/xmlbeans/2004/02/xbean/config"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://xml.apache.org/xmlbeans/2004/02/xbean/config http://svn.apache.org/viewvc/xmlbeans/tags/2.6.0/src/configschema/schema/xmlconfig.xsd?view=co">
-    <namespace uri="http://zero-install.sourceforge.net/2004/injector/interface">
-	<package>net.zeroinstall.model</package>
-    </namespace>
-</config>
