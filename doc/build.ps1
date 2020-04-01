@@ -14,6 +14,4 @@ mkdir ..\target\docs | Out-Null
 
 0install run --batch http://repo.roscidus.com/devel/doxygen
 
-cp .nojekyll,CNAME ..\target\docs\
-
 popd
