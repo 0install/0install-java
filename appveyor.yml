@@ -1,6 +1,6 @@
 image:
-- Visual Studio 2017
-- Ubuntu
+- Visual Studio 2022
+- Ubuntu2004
 
 # Java 9+ not supported by XMLBeans
 stack: jdk 8
@@ -8,7 +8,7 @@ stack: jdk 8
 for:
   - matrix:
       only:
-        - image: Visual Studio 2017
+        - image: Visual Studio 2022
     cache:
       - '%USERPROFILE%\.m2 -> **\pom.xml'
   - matrix:
