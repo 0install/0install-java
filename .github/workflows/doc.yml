@@ -13,9 +13,8 @@ jobs:
       - name: Build documentation
         run: doc/build.sh
       - name: Upload documentation
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
-          name: Documentation
           path: target/doc
       - name: Publish documentation
         uses: peaceiris/actions-gh-pages@v3

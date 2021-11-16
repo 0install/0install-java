@@ -13,7 +13,7 @@ for:
       - '%USERPROFILE%\.m2 -> **\pom.xml'
   - matrix:
       only:
-        - image: Ubuntu
+        - image: Ubuntu2004
     cache:
       - '$HOME/.m2 -> **/pom.xml'
 
